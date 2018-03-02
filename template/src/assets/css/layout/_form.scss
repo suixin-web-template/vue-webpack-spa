@@ -1,0 +1,73 @@
+/**
+ * Created by liubingwen on 2016/5/12.
+ */
+@import "./variables";
+.form-control {
+  display: block;
+  width: 100%;
+  height: $input-height-base;
+  padding: $padding-base-vertical $padding-base-horizontal;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $input-color;
+  background-color: $input-bg;
+  background-image: none;
+  border: 1px solid $input-border;
+  border-radius: $input-border-radius;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  @include form-control-focus;
+  @include placeholder;
+&[readonly] {
+  background-color: $input-bg;
+  opacity: 1;
+}
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: $input-bg-disabled;
+    opacity: 1;
+  }
+
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: $cursor-disabled;
+  }
+
+}
+
+textarea.form-control {
+  height: auto;
+}
+
+.form-group-sm {
+  .form-control {
+    height: $input-height-small;
+    padding: $padding-small-vertical $padding-small-horizontal;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+    border-radius: $input-border-radius-small;
+  }
+  textarea.form-control,
+  select[multiple].form-control {
+    height: auto;
+  }
+  &.has-i{
+    position: relative;
+    .form-control{
+      padding: 4px 17px;
+    }
+    >i{
+      font-style: normal;
+      position: absolute;
+      top:5px;
+      color: #ccc;
+      font-size: 12px;
+      &:first-child{
+        left: 4px;
+      }
+      &:last-child{
+        right: 4px;
+      }
+    }
+  }
+}

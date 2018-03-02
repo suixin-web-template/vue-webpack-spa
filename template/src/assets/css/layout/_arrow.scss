@@ -1,0 +1,18 @@
+/**
+ * Created by liubingwen on 2016/5/12.
+ */
+
+.arrow{
+  display: inline-block;
+  width: 9px;
+  height: 5px;
+  background: url(images/animate_arrow01.png?__inline)  0 0 no-repeat;
+  transition: transform .25s ease-in-out;
+    &.current{
+            transform: rotate(180deg);
+    }
+}
+img.loading {
+    height: 100%;
+    background: url(./images/loading.gif?__inline) no-repeat center center;
+}

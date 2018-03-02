@@ -1,0 +1,37 @@
+/**
+ * Created by liubingwen on 2016/5/12.
+ */
+
+
+.clearfix {
+  @include clearfix;
+}
+.center-block {
+  @include center-block;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+
+.dn{
+  display: none;
+}
+
+.text-hide {
+  @include text-hide;
+}

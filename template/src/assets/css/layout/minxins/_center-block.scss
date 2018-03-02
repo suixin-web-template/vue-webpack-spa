@@ -1,0 +1,8 @@
+/**
+ * Created by liubingwen on 2016/5/12.
+ */
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

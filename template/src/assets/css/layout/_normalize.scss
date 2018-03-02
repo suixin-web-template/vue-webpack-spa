@@ -1,0 +1,42 @@
+@import "~normalize.css";
+*,*:before,*:after {
+  box-sizing: border-box;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  padding: 0;
+  margin: 0;
+}
+body, button, input, select, textarea {
+  font-size: 14px;
+  line-height: 1.25;
+  font-family: -apple-system,BlinkMacSystemFont,PingFang SC,Hiragino Sans GB,Segoe UI,Microsoft YaHei,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,wenquanyi micro hei,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+ul,li{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+input,textarea{
+  outline: none;
+}
+img{
+    max-width: 100%;
+}
+.dn{
+    display: none;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.text-center{
+  text-align: center;
+}
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: right;
+}

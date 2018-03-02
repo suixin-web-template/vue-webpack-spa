@@ -1,0 +1,13 @@
+/**
+ * Created by liubingwen on 2016/5/12.
+ */
+
+@mixin placeholder($color: $input-color-placeholder) {
+
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder { color: $color; }
+  &::-webkit-input-placeholder  { color: $color; }
+}

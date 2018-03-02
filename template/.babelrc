@@ -1,0 +1,25 @@
+{
+  "presets": [
+    ["env", {
+      "modules": false,
+      "targets": {
+        "browsers": ["iOS >= 7", "Android >= 4.1"]
+      }
+    }],
+    "vue-app"
+  ],
+  "plugins": [
+    ["transform-es2015-classes", { "loose": true }],
+    "transform-proto-to-assign",
+    "transform-runtime",
+    "minify-dead-code-elimination",
+    ["transform-imports",{
+      "lodash": {
+        "transform": "lodash/${member}"
+      },
+      "core-js": {
+        "transform": "core-js/${member}"
+      }
+    }]
+  ]
+}
