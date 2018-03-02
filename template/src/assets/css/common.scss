@@ -2,8 +2,10 @@
  * Created by liubingwen on 2017/6/20.
  */
 @import "./layout/normalize";
-@import "./layout/mixins";
 @import "./layout/animate";
 input:-webkit-autofill {
   box-shadow: 0 0 0 1000px #fff inset !important;
+}
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  /* iPhone X 独有样式写在这里*/
 }

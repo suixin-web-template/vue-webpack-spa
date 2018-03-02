@@ -3,7 +3,7 @@ const path = require('path')
 const {isDev, ROOT_PATH} = require('../../config/index')
 
 // const ExtractTextPlugin = require('extract-text-webpack-plugin')
-exports.cssLoaders = function () {
+exports.cssLoaders = function (options = {}) {
   const cssLoader = {
     loader: 'css-loader',
     options: {
@@ -11,34 +11,39 @@ exports.cssLoaders = function () {
       sourceMap: isDev
     }
   }
+  const postcssLoader = {
+    loader: 'postcss-loader',
+    options: {
+      sourceMap: isDev
+    }
+  }
   function resolveResouce (name) {
     return path.resolve(ROOT_PATH, 'src/assets/css/layout/' + name)
   }
-  function generateSassResourceLoader () {
-    const loaders = [
-      cssLoader,
-      // 'postcss-loader',
-      'sass-loader',
-      {
-        loader: 'sass-resources-loader',
-        options: {
-          // it need a absolute path
-          resources: [resolveResouce('_mixins.scss')]
-        }
-      }
-    ]
-    return ['vue-style-loader'].concat(loaders)
-  }
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
-    const loaders = [cssLoader]
+    const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
     if (loader) {
-      loaders.push({
-        loader: loader + '-loader',
-        options: Object.assign({}, loaderOptions, {
-          sourceMap: isDev
+      if (loader === 'sass') {
+        loaders.push(
+          'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              // it need a absolute path
+              resources: [resolveResouce('_mixins.scss')]
+            }
+          }
+        )
+      } else {
+        loaders.push({
+          loader: loader + '-loader',
+          options: Object.assign({}, loaderOptions, {
+            sourceMap: isDev
+          })
         })
-      })
+      }
+
     }
     return ['vue-style-loader'].concat(loaders)
   }
@@ -48,8 +53,8 @@ exports.cssLoaders = function () {
     css: generateLoaders(),
     postcss: generateLoaders(),
     less: generateLoaders('less'),
-    sass: generateSassResourceLoader('sass'),
-    scss: generateSassResourceLoader('sass')
+    sass: generateLoaders('sass'),
+    scss: generateLoaders('sass')
   }
 }
 
