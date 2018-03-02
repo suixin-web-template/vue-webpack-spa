@@ -59,8 +59,8 @@ exports.cssLoaders = function (options = {}) {
 }
 
 // Generate loaders for standalone style files (outside of .vue)
-exports.styleLoaders = function () {
-  const loaders = exports.cssLoaders()
+exports.styleLoaders = function (options) {
+  const loaders = exports.cssLoaders(options)
   return Object.keys(loaders).map(extension => ({
     test: new RegExp('\\.' + extension + '$'),
     use: loaders[extension]

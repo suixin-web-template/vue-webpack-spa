@@ -38,7 +38,7 @@ const rules = [
     },
     include: ROOT_PATH
   }
-].concat(utils.styleLoaders({sourceMap: isDev, usePostCSS: true}))
+].concat(utils.styleLoaders({usePostCSS: true}))
 
 module.exports = {
   rules
