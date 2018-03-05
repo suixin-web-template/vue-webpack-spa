@@ -2,21 +2,21 @@
   "prompts": {
     "name": {
       "type": "input",
-      "label": "Project name"
+      "label": "项目名称："
     },
     "description": {
       "type": "input",
-      "label": "Project description",
+      "label": "项目描述：",
       "default": "A Vue.js project"
     },
     "author": {
       "type": "input",
-      "label": "Author"
+      "label": "作者："
     },
-    "license": {
-      "type": "input",
-      "label": "License",
-      "default": "MIT"
+    "easymock": {
+      "type": "confirm",
+      "label": "是否启动easymock",
+      "default": "y"
     }
   },
   "completeMessage": "{{#inPlace}}To get started:\n\n  npm install\n  npm run dev{{else}}To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev{{/inPlace}}"

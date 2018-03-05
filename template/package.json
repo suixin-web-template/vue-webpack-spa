@@ -1,12 +1,16 @@
 {
-  "name": "har-gdbank-web",
+  "name": "{{ name }}",
   "version": "1.0.0",
-  "description": "",
-  "author": "liubingwen",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
+  "license": "{{ license }}",
+  "private": true,
   "scripts": {
+    {{#easymock}}
     "easymock": "easymock init",
-    "lint": "eslint --fix --ext .js,.vue src",
     "mock": "cross-env NODE_ENV=mock webpack-dev-server --config ./build/webpack.config.js",
+    {{/easymock}}
+    "lint": "eslint --fix --ext .js,.vue src",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.config.js",
     "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.config.js --progress --hide-modules"
   },
@@ -35,7 +39,9 @@
     "cross-env": "^5.1.3",
     "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
+    {{#easymock}}
     "easy-mock-cli": "^0.3.0",
+    {{/easymock}}
     "eslint": "^4.14.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-friendly-formatter": "3.0.0",
