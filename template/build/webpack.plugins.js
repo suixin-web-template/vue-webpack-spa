@@ -9,7 +9,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
 const {entry} = require('./webpack.entry')
 const path = require('path')
-const {isDev, isMock, BUILD_PATH, baseURL} = require('../config/index')
+const {isDev{{#easymock}}, isMock{{/easymock}}, BUILD_PATH, baseURL} = require('../config/index')
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
 module.exports = function () {
   const NODE_ENV = isDev ? 'development' : 'production'
@@ -64,7 +64,7 @@ module.exports = function () {
         NODE_ENV: JSON.stringify(NODE_ENV)
       },
       IS_DEV: JSON.stringify(isDev),
-      baseURL: JSON.stringify(isMock ? baseURL.mock : isDev ? baseURL.dev : baseURL.prd)
+      baseURL: JSON.stringify({{#easymock}}isMock ? baseURL.mock : {{/easymock}}isDev ? baseURL.dev : baseURL.prd)
     })
   )
   if (isDev) {
