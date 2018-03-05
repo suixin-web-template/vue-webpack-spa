@@ -4,7 +4,7 @@
 const path = require('path')
 const vueLoaderConfig = require('./vueLoad/vue-loader.conf')
 const utils = require('./vueLoad/utils')
-const {ROOT_PATH} = require('../config/index')
+const {ROOT_PATH, isDev} = require('../config/index')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -38,7 +38,7 @@ const rules = [
     },
     include: ROOT_PATH
   }
-].concat(utils.styleLoaders())
+].concat(utils.styleLoaders({usePostCSS: true}))
 
 module.exports = {
   rules

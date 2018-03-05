@@ -9,13 +9,12 @@ module.exports = {
   ROOT_PATH, // 项目根目录
   isMock, // 是否是开发环境
   isDev, // 是否是开发环境
-  publicPath: '/har-alipay-web',
+  publicPath: '/{{ name }}',
   BUILD_PATH: path.resolve(ROOT_PATH, 'dist'), // 生产目录,
   port: 8080, // 项目端口号
   proxyConfig: {// 代理设置
     // '/serv/v1': 'http://192.168.3.114'
     '/har-alipay-web/api': 'http://192.168.3.117:7300/mock/5a3776cf307f85006ee374dd',
-    //'/har-alipay-web/api': 'http://1453f4h712.iask.in:15649/'
   },
   ENTRY_PATH: 'src/page/*/index.js', // 多页面模式
   ALIAS: {// 路径映射设置

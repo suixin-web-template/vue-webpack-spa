@@ -20,7 +20,8 @@ input,textarea{
   outline: none;
 }
 img{
-    max-width: 100%;
+  max-width: 100%;
+  content: normal!important;
 }
 .dn{
     display: none;
