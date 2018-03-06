@@ -7,7 +7,6 @@ const mod = require('./webpack.module')
 const {entryConfig} = require('./webpack.entry')
 const plugins = require('./webpack.plugins')
 
-
 const webpackConfig = {
   devtool: isDev ? 'eval-source-map' : false,
   entry: entryConfig,
@@ -15,6 +14,14 @@ const webpackConfig = {
     path: path.join(BUILD_PATH), // 打包后所有文件存放的地方
     filename: `pkg/[name].${!isDev ? '[chunkhash:8].' : ''}js`,
     publicPath: publicPath + '/'
+  },
+  externals: {
+    {{#if platform === 'weixin'}}
+    jweixin: 'wx',
+    {{/if}}
+    {{#if platform === 'alipay'}}
+    alipay: 'ap',
+    {{/if}}
   },
   resolve: {
     // mainFields: ['jsnext:main','main'],

@@ -13,6 +13,11 @@
       "type": "input",
       "label": "作者："
     },
+    "platform": {
+      "type": "list",
+      "label": "平台：",
+      "choices": ["weixin", "alipay", ""]
+    },
     "easymock": {
       "type": "confirm",
       "label": "是否启动easymock",
