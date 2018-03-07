@@ -20,7 +20,6 @@ module.exports = {
     // '/serv/v1': 'http://192.168.3.114'
     '/{{ name }}/api': 'http://192.168.3.117:7300/mock/5a3776cf307f85006ee374dd',
   },
-  ENTRY_PATH: 'src/page/*/index.js', // 多页面模式
   ALIAS: {// 路径映射设置
     '~': path.resolve(ROOT_PATH, 'src'),
     'page': path.resolve(ROOT_PATH, 'src/page'),

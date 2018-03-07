@@ -5,19 +5,15 @@ const webpack = require('webpack')
 const HtmlwebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-// const ZipPlugin = require('zip-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
-const {entry} = require('./webpack.entry')
 const path = require('path')
 const {isDev{{#easymock}}, isMock{{/easymock}}, BUILD_PATH, baseURL} = require('../config/index')
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
 module.exports = function () {
   const NODE_ENV = isDev ? 'development' : 'production'
-  const plugin = Object.keys(entry).map(item => {
-    const chunks = [item, 'libs', 'webpack-runtime']
-    return new HtmlwebpackPlugin({
-      filename: `page/${item}/index.html`,
-      // template: html,
+  plugin.push(
+    new HtmlwebpackPlugin({
+      filename: `index.html`,
       template: 'src/index.html',
       minify: {
         removeComments: true,
@@ -31,16 +27,9 @@ module.exports = function () {
         minifyCSS: true,
         minifyURLs: true
       },
-      chunks,
-      // chunksSortMode (chunk1, chunk2) {
-      //   const order1 = chunks.indexOf(chunk1.names[0])
-      //   const order2 = chunks.indexOf(chunk2.names[0])
-      //   return order2 - order1
-      // }
+      chunks: ['main', 'libs', 'webpack-runtime'],
       chunksSortMode: 'dependency'
-    })
-  })
-  plugin.push(
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'libs',
       minChunks: function (module, count) {

@@ -4,12 +4,14 @@
 const path = require('path')
 const {isDev, BUILD_PATH, ALIAS, ROOT_PATH, proxyConfig, port, publicPath} = require('../config/index')
 const mod = require('./webpack.module')
-const {entryConfig} = require('./webpack.entry')
 const plugins = require('./webpack.plugins')
 
 const webpackConfig = {
   devtool: isDev ? 'eval-source-map' : false,
-  entry: entryConfig,
+  entry: {
+    libs: ['vue', 'vue-router', 'axios'],
+    main: path.resolve(ROOT_PATH, 'src/index')
+  },
   output: {
     path: path.join(BUILD_PATH), // 打包后所有文件存放的地方
     filename: `pkg/[name].${!isDev ? '[chunkhash:8].' : ''}js`,
