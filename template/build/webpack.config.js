@@ -16,10 +16,10 @@ const webpackConfig = {
     publicPath: publicPath + '/'
   },
   externals: {
-    {{#if platform === 'weixin'}}
+    {{#if (platform === 'weixin')}}
     jweixin: 'wx',
     {{/if}}
-    {{#if platform === 'alipay'}}
+    {{#if (platform === 'alipay')}}
     alipay: 'ap',
     {{/if}}
   },
