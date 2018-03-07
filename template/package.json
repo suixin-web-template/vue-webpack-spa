@@ -2,7 +2,7 @@
   "name": "{{ name }}",
   "version": "1.0.3",
   "description": "{{ description }}",
-  "author": "{{ author }}",
+  "author": "{{{ author }}}",
   "license": "{{ license }}",
   "private": true,
   "scripts": {

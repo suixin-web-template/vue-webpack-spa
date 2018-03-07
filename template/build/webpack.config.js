@@ -16,12 +16,12 @@ const webpackConfig = {
     publicPath: publicPath + '/'
   },
   externals: {
-    {{#if (platform === 'weixin')}}
+    {{#if_eq platform 'weixin'}}
     jweixin: 'wx',
-    {{/if}}
-    {{#if (platform === 'alipay')}}
+    {{/if_eq}}
+    {{#if_eq platform 'alipay'}}
     alipay: 'ap',
-    {{/if}}
+    {{/if_eq}}
   },
   resolve: {
     // mainFields: ['jsnext:main','main'],

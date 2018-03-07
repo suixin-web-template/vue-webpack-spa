@@ -16,7 +16,7 @@
     "platform": {
       "type": "list",
       "label": "平台：",
-      "choices": ["weixin", "alipay", ""]
+      "choices": ["weixin", "alipay", "none"]
     },
     "easymock": {
       "type": "confirm",
