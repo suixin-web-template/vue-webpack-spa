@@ -19,10 +19,10 @@ const webpackConfig = {
   },
   externals: {
     {{#if_eq platform 'weixin'}}
-    jweixin: 'wx',
+    jweixin: 'wx'
     {{/if_eq}}
     {{#if_eq platform 'alipay'}}
-    alipay: 'ap',
+    alipay: 'ap'
     {{/if_eq}}
   },
   resolve: {

@@ -11,7 +11,7 @@ const {isDev{{#easymock}}, isMock{{/easymock}}, BUILD_PATH, baseURL} = require('
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
 module.exports = function () {
   const NODE_ENV = isDev ? 'development' : 'production'
-  plugin.push(
+  const plugin = [
     new HtmlwebpackPlugin({
       filename: `index.html`,
       template: 'src/index.html',
@@ -55,7 +55,7 @@ module.exports = function () {
       IS_DEV: JSON.stringify(isDev),
       baseURL: JSON.stringify({{#easymock}}isMock ? baseURL.mock : {{/easymock}}isDev ? baseURL.dev : baseURL.prd)
     })
-  )
+  ]
   if (isDev) {
     plugin.push(
       new webpack.HotModuleReplacementPlugin()
