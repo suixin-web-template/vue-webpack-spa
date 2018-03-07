@@ -26,12 +26,12 @@
         "id": {
           "type": "input",
           "label": "Id:",
-          "default": "5a2947df307f85006ee37462"
+          "default": ""
         },
         "name": {
           "type": "input",
           "label": "该项目下的API生成之后会被放至到api目录位置：",
-          "default": "wx"
+          "default": ""
         }
       }
     }
