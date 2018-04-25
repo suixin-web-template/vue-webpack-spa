@@ -21,6 +21,7 @@ module.exports = {
     },
     'postcss-viewport-units': {},
     'cssnano': {
+      reduceIdents: false, // 禁止修改动画名称
       'preset': 'advanced',
       'autoprefixer': false,
       'postcss-zindex': false
